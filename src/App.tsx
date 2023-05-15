@@ -1,24 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Router from './Router';
 
 function App() {
+  // normally I would scaffold context in this file
+  // EG. user context, global styling, api context, 3rd party package context
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Router from './Router';
 import { GithubApiContextProvider } from './utils/githubApi/githubApi';

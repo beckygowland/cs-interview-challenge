@@ -1,10 +1,11 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useGithubApi } from '../../../utils/githubApi/githubApi';
-import { useParams } from 'react-router-dom';
 
-export default function usePaginatedCommitFetch(user: string, repo: string) {
+export function usePaginatedCommitFetch(user: string, repo: string) {
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState<undefined | Error>()
+    // i'm being lazy by not typing this object properly and using "any". In a 
+    // production environment I would import the types package for Octokit
     const [data, setData] = useState<Array<any>>([])
     const [page, setPage] = useState(1)
     const api = useGithubApi();
@@ -31,7 +32,7 @@ export default function usePaginatedCommitFetch(user: string, repo: string) {
                 setIsLoading(false)
             })
         }
-    }, [page, user, repo])
+    }, [page, user, repo, api])
 
     return {isLoading, error, data, fetchMoreCommits}
 }

@@ -11,17 +11,18 @@ export default function RepoForm() {
   const [user, setUser] = useState('');
   const [repo, setRepo] = useState('');
 
-  const handleClick = () => navigate(getCommitsListUrl(user, repo));
+  const handleClick = () => {
+    navigate(getCommitsListUrl(user, repo))
+  };
   const isDisabled = !user || !repo
 
   return (
     <div className='RepoFormContainer'>
-      <form className='RepoForm' onSubmit={handleClick}>
-        <TextInput required placeholder='User/Org' value={user} onChange={(e) => setUser(e.target.value)} />
-        <TextInput required placeholder='Repo' value={repo} onChange={(e) => setRepo(e.target.value)} />
+      <form className='RepoForm' onSubmit={handleClick} data-testid="form">
+        <TextInput required placeholder='User/Org' value={user} onChange={(e) => setUser(e.target.value)} data-testid="user" />
+        <TextInput required placeholder='Repo' value={repo} onChange={(e) => setRepo(e.target.value)} data-testid="repo" />
         <div className='RepoFormButtonContainer'>
-
-        <Button type='button' onClick={handleClick} disabled={isDisabled}>Submit</Button>
+          <Button type='submit' onClick={handleClick} disabled={isDisabled}>Submit</Button>
         </div>
       </form>
     </div>

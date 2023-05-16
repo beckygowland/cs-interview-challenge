@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useGithubApi } from '../../utils/githubApi/githubApi';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { redirect, useParams } from 'react-router-dom';
 import CommitRow from './components/CommitRow/CommitRow';
-import usePaginatedCommitFetch from './hooks/usePaginatedCommitFetch';
+import {usePaginatedCommitFetch} from './hooks/usePaginatedCommitFetch';
 import './CommitList.css'
 import moment from 'moment';
 import Button from '../../components/Button/Button';
+import { ROUTES } from '../../Routes';
 
 export default function CommitsList() {
     const { user, repo } = useParams();
@@ -13,7 +13,8 @@ export default function CommitsList() {
 
     if (error) {
         if (error.message === "Not Found") {
-            return <p className='CommitListError'>Could not find repo</p>
+            redirect(ROUTES.doesNotExist)
+            return null;
         }
         return <p className='CommitListError'>An unexpected error occured</p>
     }

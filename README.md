@@ -15,7 +15,7 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### 3rd party libraries
-Octokit: used to make requests to the github api
+Octokit: used to make requests to the github api \
 MomentJS: to ease the nightmare that is date formatting
 
 ### Future work

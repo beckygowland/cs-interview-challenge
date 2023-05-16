@@ -1,0 +1,19 @@
+.CommitRow {
+    background-color: white;
+    border-bottom: 3px solid grey;
+
+    .DateColumn {
+        width: 230px;
+        font-weight: 600;
+    }
+}
+
+.CommitRow td {
+    padding: 16px 16px;
+    border-bottom: 1px solid grey;
+    text-align: left;
+}
+
+.CommitRow a {
+    color: #37737A;
+}

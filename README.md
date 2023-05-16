@@ -20,7 +20,7 @@ MomentJS: to ease the nightmare that is date formatting
 
 ### Future work
 - stricter typing, and including 3rd party packages to keep up with api types
-- more scaffolding for testing best practices and to write tests stricter & faster
+- more scaffolding for testing best practices and to write tests with more coverage & to build them out faster
 - bring in a components library to setup css/theming across the app as well as richer out of the box features. Would assist with css naming so that there are no collisions/clobbering
 
 

@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ROUTES, getCommitsListUrl } from '../../Routes';
+import { getCommitsListUrl } from '../../Routes';
+import Button from '../../components/Button/Button';
+import TextInput from '../../components/TextInput/TextInput';
+import './RepoForm.css'
 
 export default function RepoForm() {
   const navigate = useNavigate();
-  const handleClick = () => navigate(getCommitsListUrl('m3db', 'm3'));
+
+  const [user, setUser] = useState('');
+  const [repo, setRepo] = useState('');
+
+  const handleClick = () => navigate(getCommitsListUrl(user, repo));
+  const isDisabled = !user || !repo
 
   return (
-    <button type="button" onClick={handleClick}>
-      Test nav
-    </button>
+    <div className='RepoFormContainer'>
+      <form className='RepoForm' onSubmit={handleClick}>
+        <TextInput required placeholder='User/Org' value={user} onChange={(e) => setUser(e.target.value)} />
+        <TextInput required placeholder='Repo' value={repo} onChange={(e) => setRepo(e.target.value)} />
+        <div className='RepoFormButtonContainer'>
+
+        <Button type='button' onClick={handleClick} disabled={isDisabled}>Submit</Button>
+        </div>
+      </form>
+    </div>
   );
 }

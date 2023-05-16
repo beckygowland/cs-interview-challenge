@@ -1,7 +1,15 @@
 .CommitList {
     margin: 40px 120px;
 
+    .CommitListLoading {
+        color: white;
+        font-size: large;
+    }
 
+    .CommitListLoadMore {
+        width: 100%;
+        margin-top: 12px;
+    }
 }
 
 .CommitListHeader {
@@ -12,3 +20,8 @@
     border-spacing: 0px;
 }
 
+.CommitListError {
+    color: white;
+    margin: 16px;
+    font-size: x-large;
+}

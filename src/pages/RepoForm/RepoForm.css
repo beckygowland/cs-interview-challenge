@@ -1,0 +1,33 @@
+.RepoFormContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .TextInput {
+        margin-bottom: 10px;
+        width: 250px;
+    }
+
+    .Button {
+        background-color: #057278;
+        color: white;
+    }
+
+    .Button:disabled,
+    .Button[disabled] {
+        background-color: #10515B;
+        color: #7B8F96;
+    }
+}
+
+.RepoForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.RepoFormButtonContainer {
+    display: flex;
+    justify-content: end;
+}

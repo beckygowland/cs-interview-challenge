@@ -5,6 +5,7 @@ import CommitRow from './components/CommitRow/CommitRow';
 import usePaginatedCommitFetch from './hooks/usePaginatedCommitFetch';
 import './CommitList.css'
 import moment from 'moment';
+import Button from '../../components/Button/Button';
 
 export default function CommitsList() {
     const { user, repo } = useParams();
@@ -12,9 +13,9 @@ export default function CommitsList() {
 
     if (error) {
         if (error.message === "Not Found") {
-            return <div>Could not find repo</div>
+            return <p className='CommitListError'>Could not find repo</p>
         }
-        return <div>An unexpected error occured</div>
+        return <p className='CommitListError'>An unexpected error occured</p>
     }
     return (
         <div className='CommitList'>
@@ -31,8 +32,8 @@ export default function CommitsList() {
                     }
                 </tbody>
             </table>
-            {isLoading && <div>loading...</div>}
-            {!isLoading && <button onClick={fetchMoreCommits}>Load more</button>}
+            {isLoading && <p className='CommitListLoading'>loading...</p>}
+            {!isLoading && <Button className='CommitListLoadMore' onClick={fetchMoreCommits} children="Load more" />}
         </div>
     );
 }

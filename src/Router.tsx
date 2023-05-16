@@ -7,11 +7,7 @@ import {
 import RepoForm from './pages/RepoForm/RepoForm';
 import CommitsList from './pages/CommitsList/CommitsList';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
-
-export const ROUTES = {
-    commitsList: "/:user/:repo",
-    home: "/",
-}
+import { ROUTES } from './Routes';
 
 function Router() {
     return (
